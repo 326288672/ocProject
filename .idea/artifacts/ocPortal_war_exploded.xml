@@ -13,6 +13,8 @@
           <element id="archive" name="ocService-1.0.0-SNAPSHOT.jar">
             <element id="module-output" name="ocService" />
           </element>
+          <element id="library" level="project" name="Maven: junit:junit:4.12" />
+          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
           <element id="library" level="project" name="Maven: org.apache.poi:poi:3.7" />
           <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml:3.7" />
           <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml-schemas:3.7" />

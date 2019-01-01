@@ -1,15 +1,11 @@
 package com.online.college.service;
-
 import java.io.File;
-
 import junit.framework.TestCase;
-
 import org.apache.log4j.Logger;
-
 import com.online.college.common.storage.QiniuStorage;
 import com.online.college.common.storage.ThumbModel;
 import com.online.college.common.util.CommonUtil;
-
+import org.apache.xmlbeans.impl.tool.XSTCTester;
 public class QiNiuTest extends TestCase {
 	Logger log = Logger.getLogger(AppTest.class);
 	

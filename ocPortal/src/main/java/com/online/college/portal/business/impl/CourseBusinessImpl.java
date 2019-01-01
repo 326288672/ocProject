@@ -15,8 +15,6 @@ import com.online.college.core.course.domain.CourseSection;
 import com.online.college.core.course.service.ICourseSectionService;
 import com.online.college.portal.business.ICourseBusiness;
 import com.online.college.portal.vo.CourseSectionVO;
-
-
 /**
  * 课程业务层
  */
@@ -29,22 +27,26 @@ public class CourseBusinessImpl implements ICourseBusiness {
 	/**
 	 * 获取课程章节
 	 */
+	@Override
 	public List<CourseSectionVO> queryCourseSection(Long courseId){
-		List<CourseSectionVO> resultList = new ArrayList<CourseSectionVO>();
+		List<CourseSectionVO> resultList = new ArrayList();
 		CourseSection queryEntity = new CourseSection();
 		queryEntity.setCourseId(courseId);
-		queryEntity.setOnsale(CourseEnum.ONSALE.value());//上架
+		//上架
+		queryEntity.setOnsale(CourseEnum.ONSALE.value());
 		
-		Map<Long,CourseSectionVO> tmpMap = new LinkedHashMap<Long,CourseSectionVO>();
+		Map<Long,CourseSectionVO> tmpMap = new LinkedHashMap();
 		Iterator<CourseSection> it = courseSectionService.queryAll(queryEntity).iterator();
 		while(it.hasNext()){
 			CourseSection item = it.next();
-			if(Long.valueOf(0).equals(item.getParentId())){//章
+			//章
+			if(Long.valueOf(0).equals(item.getParentId())){
 				CourseSectionVO vo = new CourseSectionVO();
 				BeanUtils.copyProperties(item, vo);
 				tmpMap.put(vo.getId(), vo);
 			}else{
-				tmpMap.get(item.getParentId()).getSections().add(item);//小节添加到大章中
+				//小节添加到大章中
+				tmpMap.get(item.getParentId()).getSections().add(item);
 			}
 		}
 		for(CourseSectionVO vo : tmpMap.values()){
