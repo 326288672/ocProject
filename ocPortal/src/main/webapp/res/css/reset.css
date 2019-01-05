@@ -59,13 +59,14 @@ a:focus{outline:none;}
 .f-header{
 	width: 100%;
 	height: 80px;
-	background-color:#E6E6E6;
+	background-color: #202e3a;
 }
 .f-header-box{
 	width: 1200px;
 	max-width: 100%;
 	height: 100%;
 	margin: 0 auto;
+
 }
 .logo{
 	width: 128px;
@@ -89,11 +90,11 @@ a:focus{outline:none;}
 	font-size: 16px;
 	margin-left: 10px;
 	margin-right: 10px;
-	color:#000;
+	color:#ffffff;
 }
 .header-nav-item:hover{
 	border-radius: 3px;
-	color: #0089D2;
+	color: rgba(183, 177, 185, 0.02);
 	cursor: pointer;
 }
 .header-nav-item.cur{
@@ -180,7 +181,7 @@ a:focus{outline:none;}
 	padding-top:20px;
 	width: 100%;
 	height: 150px;
-	background-color: #777777;
+	background-color: #202e3a;
 }
 
 .f-footer-box{
@@ -404,7 +405,7 @@ a:focus{outline:none;}
 }
 .course-card-container .course-card-info, .course-card-container p {
     font-size: 12px;
-    color: #93999f;
+    color: #60719f;
     line-height: 22px;
     margin: 12px 0;
 }
@@ -427,15 +428,15 @@ a:focus{outline:none;}
 }
 
 .green-bg {
-    background-color: #04B95C;
+    background-color: #39b90a;
 }
 
 .brown-bg {
-    background-color: #534542;
+    background-color: #533638;
 }
 
 .purple-bg {
-    background-color: #CD71E1;
+    background-color: #cf68e1;
 }
 
 .blue-bg {
@@ -443,11 +444,11 @@ a:focus{outline:none;}
 }
 
 .pink-bg {
-    background-color: #FC789E;
+    background-color: #fc3ea5;
 }
 
 .gray-bg {
-    background-color: #CCC;
+    background-color: #93cc9f;
 }
 
 .types-content-left {

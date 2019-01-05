@@ -6,7 +6,7 @@
 	    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
 		<meta name="keywords" content="">
 		<meta name="description" content="">
-		<title>在线网校学习平台</title>
+		<title>深蓝学院-专注人工智能的在线教育</title>
 		<#include "./common/res.html">
 	</head>
 
@@ -110,12 +110,10 @@
 		</div>
 		
 		<#include "./common/footer.html">
-		
 		<script type="text/javascript">
 			var _code = '${curCode}';
 			var _subCode = '${curSubCode}';
 			var _sort = '${sort!}';
-			
 			function _queryPage(pageNum,code,sort){
 				var params = '?pageNum='+pageNum;
 				//分类，参数没有就用页面缓存 
@@ -142,7 +140,5 @@
 				window.location.href='${s.base}/course/list.html'+params;
 			}
 		</script>
-		
 	</body>
-	
 </html>

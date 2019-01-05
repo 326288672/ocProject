@@ -6,18 +6,19 @@
         <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
-        <!-- 引入资源文件 -->
-        <#include "../../common/res.html" />
+	   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	   <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	   <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	   <!-- 引入资源文件 -->
+	   <#include "../../common/res.html" />
    </head>
    
    <body class=""> 
-  	<!-- top 导航 -->
+  	<!-- 导航栏 -->
     <#include "../../common/header.html" />
-	
 	<!-- 菜单导航 -->
     <#include "../cms-nav.html" />
-    
-    <div class="content">
+	<div class="content">
     	<input type="button" class="search-btn mt-10" style="margin-left: 15px;" onclick="window.location.href='${s.base}/carousel/toMerge.html'" value=" 添加轮播配置" />
         <div class="container-fluid">
             
@@ -72,7 +73,7 @@
 						<div><span class="color-oc f-16 oc-content"></span></div>
 					</div>
 					<div class="modal-footer modal-center">
-						<button type="button" class="btn btn-primary oc-ok">确 定</button>
+						<button type="button" class="btn btn-danger oc-ok">确 定</button>
 						<button type="button" class="btn btn-default oc-cancel">取 消</button>
 					</div>
 				</div>

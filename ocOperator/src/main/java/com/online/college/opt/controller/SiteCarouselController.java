@@ -79,6 +79,11 @@ public class SiteCarouselController {
         return new ModelAndView("redirect:/carousel/queryPage.html");
     }
 
+    /**
+     * 删除轮播配置
+     * @param entity 实体
+     * @return 返回String
+     */
     @RequestMapping(value = "/delete")
     @ResponseBody
     public String delete(ConstsSiteCarousel entity) {
