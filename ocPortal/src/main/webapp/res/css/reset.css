@@ -40,6 +40,7 @@ a:focus{outline:none;}
 	color: #FFF;
 	border-radius:4px;
 }
+/* CSS :hover 选择器*/
 .btn:hover{
 	color: #FFF;
 }
@@ -68,6 +69,8 @@ a:focus{outline:none;}
 	margin: 0 auto;
 
 }
+
+/* 图片选择器*/
 .logo{
 	width: 128px;
 	height: 100%;
@@ -95,7 +98,9 @@ a:focus{outline:none;}
 .header-nav-item:hover{
 	border-radius: 3px;
 	color: rgba(183, 177, 185, 0.02);
+	/* 鼠标样式的变化*/
 	cursor: pointer;
+	color:#ffffff;
 }
 .header-nav-item.cur{
 	background-color: rgb(51,147,100);
@@ -244,15 +249,16 @@ a:focus{outline:none;}
 	position: relative;
 	z-index: 2;
 	top: 0px;
-	background:rgba(131,131,131,0.3);
+	background: #101010 ;
 	top: -114px;
 }
 .main-category-menu .category {
     cursor: pointer;
     position: relative;
 }
+/*鼠标移动到某处显示的颜色*/
 .main-category-menu .category :hover{
-	background:rgba(100,100,100,0.6);
+	background: #31caff;
 }
 .main-category-menu .category .group{
 	height: 75px;
