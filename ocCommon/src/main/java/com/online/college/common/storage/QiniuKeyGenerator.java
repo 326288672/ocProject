@@ -11,7 +11,7 @@ import com.online.college.common.util.CommonUtil;
  */
 public class QiniuKeyGenerator {
 	/**
-	 * 多图片可以按照：/表名/字段名/业务值(refId)/时间戳 处理
+	 * 多图片可以按照：/表名/字段名/业务值(refId)/时间戳处理
 	 */
 	public static final String KEY = "/{0}/{1}/{2}/{3}";
 	
