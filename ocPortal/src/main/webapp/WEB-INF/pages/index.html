@@ -15,9 +15,9 @@
 			<!-- 轮播 分类-start -->
 			<div class="clearfix">
 				<div class=main-category>
-					
-					<!-- 轮播区-start -->
+					<!-- 轮播区-->
 					<div class="main-bg">
+						<!--判断carouselList是否存在，并且size大于零-->
 						<#if carouselList?? && carouselList?size gt 0>
 						<#list carouselList as item>
 						<a href="${item.url!''}">
@@ -28,6 +28,7 @@
 					</div>
 					<div class="f-nav-box">
 						<div class="bg-nav">
+							<!--轮播小按钮-->
 							<#if carouselList?? && carouselList?size gt 0>
 							<#list carouselList as item>
 								<#if item_index == 0>
@@ -253,9 +254,8 @@
 				</#if>
 				</#if>
 			</div>
-			<!-- Java课程-end -->
-			
-			<!--名校讲师-start -->
+
+            <!--课程讲师-start -->
 			<div class="types-block clearfix">
 				<h3 class="types-title">课程讲师</h3>
 				<#if recomdTeacherList?? && recomdTeacherList?size gt 0>
@@ -275,22 +275,19 @@
 				</#list>
 				</#if>
 			</div>
-			<!--名校讲师-end -->
 		</div>
 		<#include "./common/footer.html">
 	</body>
-	
-	<script type="text/javascript">
-	
-	$(function(){
-		//轮播效果 -start
+    <script type="text/javascript">
+		$(function(){
+		//轮播效果
 		<#if carouselList?? && carouselList?size gt 0>
 		var size = Number('${carouselList?size}');
 		<#else>
 		var size = 0;
 		</#if>
-		
 		var index = 0;
+		/*4s中轮转一次*/
 		var timer = 4000;
 		$('.bg-nav a').click(function(){
 			index = $('.bg-nav a').index($(this));
@@ -300,6 +297,7 @@
 			index = $('.index-roll-item').index($(this));
 			rollBg(index);
 		});
+		/*实现隐藏和显示*/
 		var rollBg = function(i){
 			$('.main-bg-item').fadeOut(1000);
 			$($('.main-bg-item')[i]).fadeIn(1000);
@@ -308,13 +306,12 @@
 			$('.index-roll-item').removeClass('cur');
 			$($('.index-roll-item')[i]).addClass('cur');
 		}
+		/*实现轮播效果*/
 		setInterval(function(){
 			index += 1;
 			index = index%size;
 			rollBg(index);
 		}, timer);
-		//轮播效果 -end
-		
 		//课程分类展示-start
 		$(".category").popover({
             trigger:'manual',
