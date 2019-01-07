@@ -5,8 +5,7 @@
 	id="WebApp_ID" version="2.5">
 	
 	<display-name>ocOperator</display-name>
-	
-	<!-- spring begin    -->
+	<!--配置应用上下文-->
 	<context-param>
 		<param-name>contextClass</param-name>
 		<param-value>org.springframework.web.context.support.XmlWebApplicationContext</param-value>
@@ -16,7 +15,7 @@
 		<param-value>classpath:applicationContext.xml</param-value>
 	</context-param>
 	
-	<!-- jsessionid filter -->
+	<!-- 配置jsessionid filter过滤器 -->
 	<filter>  
 	   <filter-name>jsessionidFilter</filter-name>  
 	   <filter-class>com.online.college.common.web.DisableUrlSessionFilter</filter-class>  
@@ -26,7 +25,7 @@
 	   <url-pattern>/*</url-pattern>  
 	</filter-mapping>
 	
-    <!-- Character Encoding filter -->
+    <!-- 配置字符编码filter -->
     <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -43,7 +42,7 @@
         <filter-name>encodingFilter</filter-name>
         <url-pattern>*</url-pattern>
     </filter-mapping>
-    
+    <!--配置转发器-->
 	<servlet>
 	    <servlet-name>app-servlet</servlet-name>
 	    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -53,13 +52,13 @@
 	    </init-param>
 	    <load-on-startup>1</load-on-startup>
 	</servlet>
-	
+	<!--配置servlet映射-->
 	<servlet-mapping>
 	    <servlet-name>app-servlet</servlet-name>
 	    <url-pattern>*.html</url-pattern>
 	</servlet-mapping>
 	
-	<!-- ShiroFilter start -->
+	<!-- 配置ShiroFilter-->
 	<filter>
 		<filter-name>shiroFilter</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -74,20 +73,18 @@
 		<dispatcher>REQUEST</dispatcher>
 		<dispatcher>FORWARD</dispatcher>
 	</filter-mapping>
-	<!-- ShiroFilter end -->
-	
+	<!--配置ContextLoaderListener-->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	
 	<session-config>
         <session-timeout>120</session-timeout>
     </session-config>
-
+	<!--网站打开首页-->
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
-	
+	<!--网站错误页面-->
 	<error-page>
 		<error-code>404</error-code>
 		<location>/error/404.html</location>
@@ -100,6 +97,5 @@
 		<error-code>405</error-code>
 		<location>/error/405.html</location>
 	</error-page>
-	
 </web-app>
 
