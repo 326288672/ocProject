@@ -93,7 +93,7 @@
 			enable,
 			</if>
 			<if test="createTime != null ">
-			create_time,
+			create_time
 			</if>
 			<if test="createUser != null ">
 			create_user,
@@ -126,7 +126,7 @@
 			#{enable, jdbcType=INTEGER},
 			</if>
 			<if test="createTime != null ">
-			#{createTime, jdbcType=DATE},
+			#{now(), jdbcType=DATE},
 			</if>
 			<if test="createUser != null ">
 			#{createUser, jdbcType=VARCHAR},

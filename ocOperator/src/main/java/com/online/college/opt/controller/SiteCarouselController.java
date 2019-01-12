@@ -1,5 +1,4 @@
 package com.online.college.opt.controller;
-
 import java.io.IOException;
 
 import org.apache.commons.lang.StringUtils;
@@ -17,12 +16,11 @@ import com.online.college.common.storage.ThumbModel;
 import com.online.college.common.web.JsonView;
 import com.online.college.core.consts.domain.ConstsSiteCarousel;
 import com.online.college.core.consts.service.IConstsSiteCarouselService;
-
 /**
  * 轮播配置Controller层
  *
  * @author 江龙
- * @date
+ * @date 2019-01-12
  * @email
  */
 @Controller
@@ -30,7 +28,6 @@ import com.online.college.core.consts.service.IConstsSiteCarouselService;
 public class SiteCarouselController {
     @Autowired
     private IConstsSiteCarouselService entityService;
-
     @RequestMapping(value = "/queryPage")
     public ModelAndView queryPage(ConstsSiteCarousel queryEntity, TailPage<ConstsSiteCarousel> page) {
         ModelAndView mv = new ModelAndView("cms/carousel/pagelist");
@@ -42,12 +39,10 @@ public class SiteCarouselController {
         mv.addObject("queryEntity", queryEntity);
         return mv;
     }
-
     @RequestMapping(value = "/toMerge")
     public ModelAndView toMerge(ConstsSiteCarousel entity) {
         ModelAndView mv = new ModelAndView("cms/carousel/merge");
         mv.addObject("curNav", "carousel");
-
         if (entity.getId() != null) {
             entity = entityService.getById(entity.getId());
             if (null != entity && StringUtils.isNotEmpty(entity.getPicture())) {
@@ -58,7 +53,12 @@ public class SiteCarouselController {
         mv.addObject("entity", entity);
         return mv;
     }
-
+    /**
+     * 上传图片,上传到七牛对象存储中
+     * @param entity
+     * @param pictureImg
+     * @return
+     */
     @RequestMapping(value = "/doMerge")
     public ModelAndView doMerge(ConstsSiteCarousel entity, @RequestParam MultipartFile pictureImg) {
         String key = null;
@@ -70,7 +70,6 @@ public class SiteCarouselController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         if (entity.getId() == null) {
             entityService.createSelectivity(entity);
         } else {
@@ -78,7 +77,6 @@ public class SiteCarouselController {
         }
         return new ModelAndView("redirect:/carousel/queryPage.html");
     }
-
     /**
      * 删除轮播配置
      * @param entity 实体

@@ -16,7 +16,6 @@ public class QiniuImg implements Serializable{
 	 * 原图片的url
 	 */
 	private String url;
-	
 	private String url16;
 	private String url32;
 	private String url48;
