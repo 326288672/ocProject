@@ -51,8 +51,5 @@ public interface IConstsSiteCarouselService {
 	*逻辑删除
 	**/
 	public void deleteLogic(ConstsSiteCarousel entity);
-
-
-
 }
 

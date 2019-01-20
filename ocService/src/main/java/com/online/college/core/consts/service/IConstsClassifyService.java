@@ -5,7 +5,9 @@ import java.util.List;
 import com.online.college.common.page.TailPage;
 import com.online.college.core.consts.domain.ConstsClassify;
 
-
+/**
+ * 课程类别service
+ */
 public interface IConstsClassifyService {
 
 	/**

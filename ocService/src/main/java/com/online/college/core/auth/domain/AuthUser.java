@@ -12,15 +12,13 @@ import com.online.college.common.web.auth.SessionUser;
 public class AuthUser extends BaseEntity implements SessionUser{
 
 	private static final long serialVersionUID = 94044276250229411L;
-	
 	/**
-	*登录用户名
-	**/
+	 *真实姓名
+	 **/
 	private String realname;
-
 	/**
-	*真实姓名
-	**/
+	 *登录用户名
+	 **/
 	private String username;
 
 	/**

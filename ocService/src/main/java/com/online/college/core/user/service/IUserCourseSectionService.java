@@ -52,8 +52,5 @@ public interface IUserCourseSectionService {
 	*逻辑删除
 	**/
 	public void deleteLogic(UserCourseSection entity);
-
-
-
 }
 

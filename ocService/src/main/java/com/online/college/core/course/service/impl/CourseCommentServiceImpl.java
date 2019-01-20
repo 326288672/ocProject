@@ -53,6 +53,7 @@ public class CourseCommentServiceImpl implements ICourseCommentService{
 	/**
 	 * 创建
 	 */
+	@Override
 	public void createSelectivity(CourseComment entity){
 		entityDao.createSelectivity(entity);
 	}

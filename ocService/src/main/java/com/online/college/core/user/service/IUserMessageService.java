@@ -4,7 +4,9 @@ import java.util.List;
 import com.online.college.common.page.TailPage;
 import com.online.college.core.user.domain.UserMessage;
 
-
+/**
+ * 用户信息接收
+ */
 public interface IUserMessageService {
 
 	/**
@@ -46,8 +48,5 @@ public interface IUserMessageService {
 	*逻辑删除
 	**/
 	public void deleteLogic(UserMessage entity);
-
-
-
 }
 

@@ -41,6 +41,7 @@ public class PortalBusinessImpl implements IPortalBusiness {
 	/**
 	 * 获取所有，包括一级分类&二级分类
 	 */
+	@Override
 	public List<ConstsClassifyVO> queryAllClassify(){
 		List<ConstsClassifyVO> resultList = new ArrayList<ConstsClassifyVO>();
 		for(ConstsClassifyVO vo : this.queryAllClassifyMap().values()){
@@ -52,6 +53,7 @@ public class PortalBusinessImpl implements IPortalBusiness {
 	/**
 	 * 获取所有分类
 	 */
+	@Override
 	public Map<String,ConstsClassifyVO> queryAllClassifyMap(){
 		Map<String,ConstsClassifyVO> resultMap = new LinkedHashMap<String,ConstsClassifyVO>();
 		Iterator<ConstsClassify> it = constsClassifyService.queryAll().iterator();
@@ -73,6 +75,7 @@ public class PortalBusinessImpl implements IPortalBusiness {
 	/**
 	 * 为分类设置课程推荐
 	 */
+	@Override
 	public void prepareRecomdCourses(List<ConstsClassifyVO> classifyVoList){
 		if(CollectionUtils.isNotEmpty(classifyVoList)){
 			for(ConstsClassifyVO item : classifyVoList){

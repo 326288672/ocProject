@@ -5,32 +5,34 @@ import java.util.List;
 import com.online.college.common.page.TailPage;
 import com.online.college.core.course.domain.CourseComment;
 
-
+/**
+ * 课程评论类
+ */
 public interface CourseCommentDao {
 
 	/**
-	*根据id获取
+	*根据id获取评论
 	**/
 	public CourseComment getById(Long id);
 
 	/**
-	*获取所有
+	*获取所有评论
 	**/
 	public List<CourseComment> queryAll(CourseComment queryEntity);
 
 	/**
-	*获取总数量
+	*获取评论总数量
 	**/
 	public Integer getTotalItemsCount(CourseComment queryEntity);
 
 	/**
-	*分页获取
+	*分页获取评论
 	**/
 	public List<CourseComment> queryPage(CourseComment queryEntity , TailPage<CourseComment> page);
 	
 	
 	/**
-	*获取总数量
+	*获取评论总数量
 	**/
 	public Integer getMyQAItemsCount(CourseComment queryEntity);
 
@@ -68,8 +70,5 @@ public interface CourseCommentDao {
 	*逻辑删除
 	**/
 	public void deleteLogic(CourseComment entity);
-
-
-
 }
 

@@ -6,7 +6,9 @@ import com.online.college.common.page.TailPage;
 import com.online.college.core.user.domain.UserFollowStudyRecord;
 import com.online.college.core.user.domain.UserFollows;
 
-
+/**
+ * 用户关注
+ */
 public interface UserFollowsDao {
 
 	/**

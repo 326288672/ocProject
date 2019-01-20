@@ -4,7 +4,9 @@ import java.util.List;
 import com.online.college.common.page.TailPage;
 import com.online.college.core.consts.domain.ConstsCollege;
 
-
+/**
+ * 高校操作service
+ */
 public interface IConstsCollegeService {
 
 	/**
@@ -56,8 +58,5 @@ public interface IConstsCollegeService {
 	*逻辑删除
 	**/
 	public void deleteLogic(ConstsCollege entity);
-
-
-
 }
 

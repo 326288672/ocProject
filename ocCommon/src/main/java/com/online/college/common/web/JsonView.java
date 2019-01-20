@@ -5,17 +5,17 @@ import net.sf.json.JSONObject;
 public class JsonView {
 
 	/**
-	 * 错误代码 0-成功
+	 * 返回的错误代码 0-成功
 	 */
 	private Integer errcode = 0;
 
 	/**
-	 * 消息
+	 * 返回的消息
 	 */
 	private String message;
 
 	/**
-	 * 数据
+	 * 返回的数据
 	 */
 	private Object data;
 	

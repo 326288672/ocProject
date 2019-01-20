@@ -4,7 +4,9 @@ import java.util.List;
 import com.online.college.common.page.TailPage;
 import com.online.college.core.user.domain.UserCollections;
 
-
+/**
+ * 用户课程收藏
+ */
 public interface IUserCollectionsService {
 
 	/**
@@ -46,8 +48,5 @@ public interface IUserCollectionsService {
 	*逻辑删除
 	**/
 	public void deleteLogic(UserCollections entity);
-
-
-
 }
 

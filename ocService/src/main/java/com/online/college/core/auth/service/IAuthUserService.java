@@ -60,7 +60,5 @@ public interface IAuthUserService {
 	*/
 	public void deleteLogic(AuthUser entity);
 
-
-
 }
 

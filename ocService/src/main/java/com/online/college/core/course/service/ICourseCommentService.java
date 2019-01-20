@@ -56,8 +56,5 @@ public interface ICourseCommentService {
 	*逻辑删除
 	**/
 	public void deleteLogic(CourseComment entity);
-
-
-
 }
 

@@ -49,7 +49,7 @@ public class AuthController {
 			return new ModelAndView("redirect:/index.html");
 		}
 		
-		//验证码判断
+		//验证码判断，错误验证码跳到登陆页面
 		if(identiryCode!=null && !identiryCode.equalsIgnoreCase(SessionContext.getIdentifyCode(request))){
 			ModelAndView mv = new ModelAndView("auth/login");
 			mv.addObject("errcode", 1);
@@ -100,7 +100,6 @@ public class AuthController {
 			return JsonView.render(0);
 		}
 	}
-	
 	@RequestMapping(value = "/logout")
 	public ModelAndView logout(HttpServletRequest request) {
 		SessionContext.shiroLogout();

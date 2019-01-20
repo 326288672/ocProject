@@ -5,7 +5,9 @@ import com.online.college.common.page.TailPage;
 import com.online.college.core.consts.domain.ConstsClassify;
 import com.online.college.core.consts.domain.ConstsCollege;
 
-
+/**
+ * 课程类别表
+ */
 public interface ConstsClassifyDao {
 
 	/**
