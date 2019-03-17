@@ -90,7 +90,6 @@ public class AuthController {
 		if(identiryCode!=null && !identiryCode.equalsIgnoreCase(SessionContext.getIdentifyCode(request))){
 			return JsonView.render(2);
 		}
-		
 		AuthUser tmpUser = authUserService.getByUsername(authUser.getUsername());
 		if(tmpUser != null){
 			return JsonView.render(1);
@@ -105,5 +104,4 @@ public class AuthController {
 		SessionContext.shiroLogout();
 		return new ModelAndView("redirect:/index.html");
 	}
-	
 }

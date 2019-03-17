@@ -122,6 +122,5 @@ public class CourseSectionController{
 		}
 		return new JsonView().toString();
 	}
-	
 }
 

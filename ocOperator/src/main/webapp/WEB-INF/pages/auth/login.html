@@ -16,15 +16,15 @@
 		<div class="f-main">
 			<div class="types-block clearfix" style="text-align: center;">
 				<h3 class="types-title"></h3>
-				<form class="oc-form" id="infoForm" method="POST" style="text-align: center;border: 1px solid #CCC;width: 600px;margin:0 auto;padding:20px;" method="post" action="${s.base}/auth/doLogin.html">
+				<form class="oc-form" id="infoForm" method="POST" style="text-align: center;border: 10px solid #cccc99CC;width: 600px;margin:0 auto;padding:20px;" method="post" action="${s.base}/auth/doLogin.html">
 						<li></li>
 						<li><label>用户名</label>
-							<input name="username"  value="" type="text"  class="input-text"  placeholder="请输入用户名" >
+							<input id="username" name="username"  value="" type="text"  class="input-text"  placeholder="请输入用户名" >
 						</li>
 						<li><label>密码</label> 
 							<input id="password" name="password" type="password" class="input-text" placeholder="请输入密码" autocomplete="off" />
 						</li>
-						<li><label>验证码</label> 
+						<li><label>验证码</label>
 						<input id="identiryCode" name="identiryCode" maxlength="6" class="input-text" type="text" style="width: 150px;" placeholder="请输入验证码"/>
 						<a class="vali-base"><img  onclick="reloadIndityImg();" id="indeityImg"  src="${s.base}/tools/identiry/code.html" style="width:80px;height:40px;float:left;margin-left:10px;"/></a>
 						</li>
@@ -33,19 +33,15 @@
                            	<input type="checkbox" value="1" id="checkbox1" name="rememberMe" style="float: left;vertical-align:middle;">
                            	<span class="text"  style="float: left;margin-left:5px;margin-top:-10px;">下次自动登录</span>
                       	</li>
-						
-						<#if errcode ?? && errcode == 1>
+					   <#if errcode ?? && errcode == 1>
 						<li style="text-align: left;">
 							<span style="color:red;">请输入正确的验证码</span>
 						</li>
 						</#if>
-						<#if errcode ?? && errcode == 2>
-						<li style="text-align: left;">
-							<span style="color:red;">用户名密码错</span>
-						</li>
-						</#if>
-						<li class="clearfix" style="margin-top: 20px;">
-							<input type="submit" value="登录"  style="margin-right:20px;width:100px;">
+				       <li class="clearfix" style="margin-top: 10px;">
+						   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+						   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input type="submit" value="登录"  style="margin-right:	20px;width:100px;">
+							<input type="button" value="取消" style="margin-right:20px;width:100px;" onclick="clear();">
 						</li>
 					</form>
 			</div>
@@ -53,6 +49,14 @@
         <br>     <br>     <br>
 		<#include "../common/footer.html">
 	</body>
+	<script type="text/javascript">
+        function clear() {
+            console.info("12345")
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("identiryCode").value = "";
+        }
+	</script>
 	<script type="text/javascript">
 	//注册重新获取验证码
 		function reloadIndityImg(){

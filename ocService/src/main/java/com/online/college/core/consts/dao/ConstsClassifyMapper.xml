@@ -56,7 +56,7 @@
 		FROM t_consts_classify
 		WHERE del = 0 
 		ORDER BY id
-		LIMIT #{param2.startIndex, jdbcType=INTEGER} , #{param2.pageSize, jdbcType=INTEGER} 
+		LIMIT #{param2.startIndex, jdbcType=INTEGER} , #{param2.pageSize, jdbcType=INTEGER}
 	</select>
 
 	<select id="getById" parameterType="java.lang.Long" resultType="com.online.college.core.consts.domain.ConstsClassify">
@@ -148,7 +148,7 @@
 
 	<update id="update" parameterType="com.online.college.core.consts.domain.ConstsClassify" flushCache="true">
 		UPDATE t_consts_classify SET 
-		name = #{name, jdbcType=VARCHAR},
+		name = #{name  , jdbcType=VARCHAR},
 		parent_code = #{parentCode, jdbcType=VARCHAR},
 		sort = #{sort, jdbcType=VARCHAR},
 		update_time = #{updateTime, jdbcType=TIMESTAMP},
@@ -192,5 +192,4 @@
 		SET del = 1
 		WHERE id = #{id, jdbcType=INTEGER}
 	</update>
-
 </mapper>

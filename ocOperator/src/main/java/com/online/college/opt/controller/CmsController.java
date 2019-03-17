@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.online.college.common.web.SessionContext;
 
 /**
- * 后台管理Controller层
+ * 后台管理系统首页
  * @author 江龙
  * @date
  * @email jianglong_wang@sui.com
@@ -29,6 +29,5 @@ public class CmsController {
 			return new ModelAndView("auth/login");
 		}
 	}
-	
 }
 

@@ -92,10 +92,10 @@
 				</div>
 			</div>
 			<!-- 轮播 分类-end -->
-			
+		<div><h3 style="text-align: center;">人工智能</h3></div>
 			<!-- 实战推荐-start -->
 			<div class="types-block clearfix">
-				<h3 class="types-title">实战推荐</h3>
+				<h1 class="types-title" >优质课程推荐</h1>
 				<div class="types-content">
 					<#if actionCourseList?? && actionCourseList?size gt 0>
 					<#list actionCourseList as item>
@@ -131,10 +131,9 @@
 				</div>
 			</div>
 			<!-- 实战推荐-end -->
-						
-			<!-- 免费好课-start -->
+		    <!-- 免费好课-start -->
 			<div class="types-block clearfix">
-				<h3 class="types-title">免费好课</h3>
+				<h3 class="types-title" >人工智能免费课</h3>
 				<div class="types-content">
 					<#if freeCourseList?? && freeCourseList?size gt 0>
 					<#list freeCourseList as item>
@@ -181,7 +180,7 @@
 			
 			<!-- Java课程-start -->
 			<div class="types-block clearfix">
-				<h3 class="types-title">Java开发工程师</h3>
+				<h3 class="types-title">人工智能开发工程师</h3>
 				<#if javaCourseList?? && javaCourseList?size gt 0>
 				<#assign javaC0 = javaCourseList[0] />
 				<a href="${s.base}/course/learn/${javaC0.id}.html" target="_black">

@@ -16,7 +16,8 @@
 			<div class="types-block clearfix" style="text-align: center;">
 				<h3 class="types-title"></h3>
 				<form id="registerForm" method="post" action="${s.base}/auth/doRegister.html" class="oc-form"  style="text-align: center;border: 1px solid #CCC;width: 600px;margin:0 auto;padding:20px;" >
-						<li><label>用户名</label> 
+					   <li id="errorMsg" class="clearfix" style="display: none;color:red;">用户名密码不能为空</li>
+					   <li><label>用户名</label>
 							<input maxlength="20" id="username" name="username"  type="text"  class="input-text"  placeholder="请输入用户名（英文数字）" >
 						</li>
 						<li><label>密码</label> 
@@ -26,13 +27,16 @@
 						<input id="identiryCode" name="identiryCode" maxlength="6" class="input-text" type="text" style="width: 150px;" placeholder="请输入验证码"/>
 						<a class="vali-base"><img  onclick="reloadIndityImg('indeityImgRegister');" id="indeityImgRegister"  src="${s.base}/tools/identiry/code.html" style="width:80px;height:40px;float:left;margin-left:10px;"/></a>
 						</li>
-						<li id="errorMsg" class="clearfix" style="display: none;color:red;">用户名密码不能为空</li>
-						<li class="clearfix" style="margin-top: 30px;">
-							<input type="button" value="注册保存" class="btn" onclick="doSubmit();">
+					   <!--<li class="clearfix" style="margin-top: 30px;">-->
+					   <li>
+							<label>
+								<a style="text-align: center" href="${s.base}/auth/login.html">已有账号，去登录</a>
+							</label>
+						   <input  maxlength="6" type="button"  value="立即注册" class="btn" onclick="doSubmit();">
 						</li>
-						<li>
-							<a style="float: left;" href="${s.base}/auth/login.html">已有账号，去登录</a>
-						</li>
+						<!--<li>-->
+							<!--<a style="float: left;" href="${s.base}/auth/login.html">已有账号，去登录</a>-->
+						<!--</li>-->
 					</form>
 			</div>
 		</div>

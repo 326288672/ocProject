@@ -114,7 +114,7 @@
 			<div class="modal-dialog w-4" >
 				<div class="modal-content">
 					<div class="modal-header">
-						<div class="modal-title f-16" >提示信息</div>
+						<div class="modal-title f-16" >提示信息：</div>
 					</div>
 					<div class="modal-body">
 						<div><span class="color-oc f-16 oc-content"></span></div>
@@ -138,7 +138,7 @@
 				Modal.show('myModal');
 				$('#code').removeAttr('disabled');
 			}else{
-				$('#code').attr('disabled','disabled');
+				// $('#code').attr('disabled','disabled');
 				$.ajax({
 					url:'${s.base}/college/getById.html',
 				    type:'POST',
@@ -178,7 +178,7 @@
 		
 		//删除 
 		function doDelete(id){
-			Modal.confirm('确定删除?',function(){
+			Modal.confirm('确定删除此记录吗?',function(){
 				$.ajax({
 					url:'${s.base}/college/deleteLogic.html',
 				    type:'POST',

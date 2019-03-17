@@ -71,8 +71,5 @@ public interface ConstsClassifyDao {
 	*逻辑删除
 	**/
 	public void deleteLogic(ConstsClassify entity);
-
-
-
 }
 

@@ -18,7 +18,6 @@ import com.online.college.core.consts.domain.ConstsSiteCarousel;
 import com.online.college.core.consts.service.IConstsSiteCarouselService;
 /**
  * 轮播配置Controller层
- *
  * @author 江龙
  * @date 2019-01-12
  * @email
