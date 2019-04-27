@@ -18,11 +18,11 @@ public class ConstsClassifyServiceImpl implements IConstsClassifyService{
 
 	@Autowired
 	private ConstsClassifyDao entityDao;
-
+	@Override
 	public ConstsClassify getById(Long id){
 		return entityDao.getById(id);
 	}
-
+	@Override
 	public List<ConstsClassify> queryAll(){
 		return entityDao.queryAll();
 	}
@@ -35,15 +35,19 @@ public class ConstsClassifyServiceImpl implements IConstsClassifyService{
 	@Override
 	public ConstsClassify getByCode(String code){
 		if(StringUtils.isEmpty(code))
+		{
 			return null;
+		}
 		ConstsClassify queryEntity = new ConstsClassify();
 		queryEntity.setCode(code);
 		List<ConstsClassify> list = entityDao.queryByCondition(queryEntity);
 		if(CollectionUtils.isNotEmpty(list))
+		{
 			return list.get(0);
+		}
 		return null;
 	}
-
+	@Override
 	public TailPage<ConstsClassify> queryPage(ConstsClassify queryEntity ,TailPage<ConstsClassify> page){
 		Integer itemsTotalCount = entityDao.getTotalItemsCount(queryEntity);
 		List<ConstsClassify> items = entityDao.queryPage(queryEntity,page);

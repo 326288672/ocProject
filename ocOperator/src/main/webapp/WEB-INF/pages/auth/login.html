@@ -6,7 +6,7 @@
 	    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
 		<meta name="keywords" content="">
 		<meta name="description" content="">
-		<title>在线网线学习平台</title>
+		<title>在线网线教育平台</title>
 		<#include "../common/res.html">
 	</head>
 
@@ -16,7 +16,7 @@
 		<div class="f-main">
 			<div class="types-block clearfix" style="text-align: center;">
 				<h3 class="types-title"></h3>
-				<form class="oc-form" id="infoForm" method="POST" style="text-align: center;border: 10px solid #cccc99CC;width: 600px;margin:0 auto;padding:20px;" method="post" action="${s.base}/auth/doLogin.html">
+				<form class="oc-form" id="infoForm" method="POST" style="text-align: center;border: 1px solid #cccc99CC;width: 600px;margin:0 auto;padding:20px;" method="post" action="${s.base}/auth/doLogin.html">
 						<li></li>
 						<li><label>用户名</label>
 							<input id="username" name="username"  value="" type="text"  class="input-text"  placeholder="请输入用户名" >
@@ -40,8 +40,9 @@
 						</#if>
 				       <li class="clearfix" style="margin-top: 10px;">
 						   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-						   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input type="submit" value="登录"  style="margin-right:	20px;width:100px;">
-							<input type="button" value="取消" style="margin-right:20px;width:100px;" onclick="clear();">
+						   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+						   <input type="submit" value="登录"  style="margin-right:	20px;width:100px;">
+						   <input type="button" value="取消" style="margin-right:20px;width:100px;" onclick="clear()">
 						</li>
 					</form>
 			</div>
@@ -56,8 +57,7 @@
             document.getElementById("password").value = "";
             document.getElementById("identiryCode").value = "";
         }
-	</script>
-	<script type="text/javascript">
+
 	//注册重新获取验证码
 		function reloadIndityImg(){
 			document.getElementById("indeityImg").src = CONETXT_PATH + "/tools/identiry/code.html?ticket=" + Math.random();

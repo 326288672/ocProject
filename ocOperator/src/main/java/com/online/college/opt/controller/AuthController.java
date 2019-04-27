@@ -40,7 +40,14 @@ public class AuthController {
 		}
 		return new ModelAndView("auth/login");
 	}
-	
+
+	/**
+	 * 后台管理系统登录
+	 * @param user
+	 * @param identiryCode
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping(value = "/doLogin")
 	public ModelAndView doLogin(AuthUser user, String identiryCode, HttpServletRequest request){
 		
