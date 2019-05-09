@@ -45,7 +45,7 @@ public class SiteCarouselController {
         if (entity.getId() != null) {
             entity = entityService.getById(entity.getId());
             if (null != entity && StringUtils.isNotEmpty(entity.getPicture())) {
-                String pictureUrl = QiniuStorage.getUrl(entity.getPicture(), ThumbModel.THUMB_128);
+                String pictureUrl = QiniuStorage.getUrl(entity.getPicture(), ThumbModel.THUMB_64);
                 entity.setPicture(pictureUrl);
             }
         }

@@ -158,7 +158,8 @@ public class CourseController {
 	}
 	
 	/**
-	 * 添加、修改课程
+	 * 添加课程基本信息
+	 * 比如：图片、课程标题、课程描述
 	 */
 	@RequestMapping("/doMerge")
 	@ResponseBody
@@ -172,7 +173,6 @@ public class CourseController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 		//判断教师
 		if(StringUtils.isNotEmpty(entity.getUsername())){
 			AuthUser user = authUserService.getByUsername(entity.getUsername());
@@ -182,7 +182,6 @@ public class CourseController {
 		}else{
 			return JsonView.render(1).toString();
 		}
-
 		if(null != entity.getId()){
 			courseService.updateSelectivity(entity);
 		}else{

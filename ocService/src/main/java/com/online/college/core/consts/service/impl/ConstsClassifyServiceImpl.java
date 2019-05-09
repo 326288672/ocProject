@@ -12,7 +12,9 @@ import com.online.college.core.consts.dao.ConstsClassifyDao;
 import com.online.college.core.consts.domain.ConstsClassify;
 import com.online.college.core.consts.service.IConstsClassifyService;
 
-
+/**
+ * 课程分类service
+ */
 @Service
 public class ConstsClassifyServiceImpl implements IConstsClassifyService{
 
