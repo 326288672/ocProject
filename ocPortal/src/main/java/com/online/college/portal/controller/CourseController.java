@@ -57,14 +57,14 @@ public class CourseController {
 	 */
 	@RequestMapping("/learn/{courseId}")
 	public ModelAndView learn(@PathVariable Long courseId){
-		if(null == courseId)
-			return new ModelAndView("error/404"); 
-		
+		if(null == courseId) {
+			return new ModelAndView("error/404");
+		}
 		//获取课程
 		Course course = courseService.getById(courseId);
-		if(null == course)
-			return new ModelAndView("error/404"); 
-		
+		if(null == course){
+			return new ModelAndView("error/404");
+		}
 		//获取课程章节
 		ModelAndView mv = new ModelAndView("learn");
 		List<CourseSectionVO> chaptSections = this.courseBusiness.queryCourseSection(courseId);
@@ -81,7 +81,8 @@ public class CourseController {
 		//获取推荐课程
 		CourseQueryDto queryEntity = new CourseQueryDto();
 		queryEntity.descSortField("weight");
-		queryEntity.setCount(5);//5门推荐课程
+		//5门推荐课程
+		queryEntity.setCount(5);
 		queryEntity.setSubClassify(course.getSubClassify());
 		List<Course> recomdCourseList = this.courseService.queryList(queryEntity);
 		mv.addObject("recomdCourseList", recomdCourseList);
@@ -95,7 +96,6 @@ public class CourseController {
 			CourseSection curCourseSection = this.courseSectionService.getById(userCourseSection.getSectionId());
 			mv.addObject("curCourseSection", curCourseSection);
 		}
-		
 		return mv;
 	}
 	
@@ -125,8 +125,8 @@ public class CourseController {
 		userCourseSection.setCourseId(courseSection.getCourseId());
 		userCourseSection.setSectionId(courseSection.getId());
 		UserCourseSection result = userCourseSectionService.queryLatest(userCourseSection);
-		
-		if(null == result){//如果没有，插入
+		//如果没有插入
+		if(null == result){
 			userCourseSection.setCreateTime(new Date());
 			userCourseSection.setCreateUser(SessionContext.getUsername());
 			userCourseSection.setUpdateTime(new Date());

@@ -42,9 +42,9 @@ public class CourseCommentController {
 	 */
 	@RequestMapping("/segment")
 	public ModelAndView segment(CourseComment queryEntity , TailPage<CourseComment> page){
-		if(null == queryEntity.getCourseId() || queryEntity.getType() == null)
-			return new ModelAndView("error/404"); 
-		
+		if(null == queryEntity.getCourseId() || queryEntity.getType() == null){
+			return new ModelAndView("error/404");
+		}
 		ModelAndView mv = new ModelAndView("commentSegment");
 		TailPage<CourseComment> commentPage = this.courseCommentService.queryPage(queryEntity, page);
 		
@@ -67,19 +67,19 @@ public class CourseCommentController {
 	@RequestMapping(value = "/doComment")
 	@ResponseBody
 	public String doComment(HttpServletRequest request, CourseComment entity,String indeityCode){
-		
 		//验证码判断
 		if(null == indeityCode || 
 				(indeityCode != null && !indeityCode.equalsIgnoreCase(SessionContext.getIdentifyCode(request)))){
-			return new JsonView(2).toString();//验证码错误
+			//验证码错误
+			return new JsonView(2).toString();
 		}
-		
 		//文字太长
 		if(entity.getContent().trim().length() > 200 || entity.getContent().trim().length() == 0){
-			return new JsonView(3).toString();//文字太长或者为空
+			//文字太长或者为空
+			return new JsonView(3).toString();
 		}
-		
-		if(null != entity.getRefId()){//来自于个人中心评论
+		//来自于个人中心评论
+		if(null != entity.getRefId()){
 			CourseComment refComment = this.courseCommentService.getById(entity.getRefId());
 			if(null != refComment){
 				CourseSection courseSection = courseSectionService.getById(refComment.getSectionId());
@@ -89,8 +89,8 @@ public class CourseCommentController {
 					entity.setCourseId(refComment.getCourseId());
 					entity.setSectionId(refComment.getSectionId());
 					entity.setSectionTitle(courseSection.getName());
-					
-					entity.setToUsername(refComment.getUsername());//引用的评论的username
+					//引用的评论的username
+					entity.setToUsername(refComment.getUsername());
 					entity.setUsername(SessionContext.getUsername());
 					entity.setCreateTime(new Date());
 					entity.setCreateUser(SessionContext.getUsername());
@@ -105,13 +105,13 @@ public class CourseCommentController {
 			CourseSection courseSection = courseSectionService.getById(entity.getSectionId());
 			if(null != courseSection){
 				entity.setSectionTitle(courseSection.getName());
-				entity.setToUsername(entity.getCreateUser());//toUsername可以作为页面入参
+				//toUsername可以作为页面入参
+				entity.setToUsername(entity.getCreateUser());
 				entity.setUsername(SessionContext.getUsername());
 				entity.setCreateTime(new Date());
 				entity.setCreateUser(SessionContext.getUsername());
 				entity.setUpdateTime(new Date());
 				entity.setUpdateUser(SessionContext.getUsername());
-				
 				this.courseCommentService.createSelectivity(entity);
 				return new JsonView(0).toString();
 			}
