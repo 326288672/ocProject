@@ -88,7 +88,8 @@ public class AuthController {
 			if(rememberMe != null && rememberMe == 1){
 				token.setRememberMe(true);
 			}
-			currentUser.login(token);//shiro：不抛出异常，登陆成功
+			//shiro：不抛出异常，登陆成功
+			currentUser.login(token);
 			return new JsonView().toString();
 		}catch(AuthenticationException e){ //登录失败
 			return JsonView.render(1, "用户名或密码不正确");

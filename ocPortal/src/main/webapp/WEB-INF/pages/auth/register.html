@@ -46,7 +46,23 @@
 		function doSubmit(){
 			var username = $('#username').val();
 			var password = $('#password').val();
-			
+			//验证码不能为空
+            var code = $('#identiryCode').val();
+            if(oc.isEmpty(username)&&oc.isEmpty(password)&&oc.isEmpty(code)){
+                $('#errorMsg').show();
+                $('#errorMsg').html("账号密码或验证码为空");
+                return;
+            }
+            if(oc.isEmpty(username)){
+                $('#errorMsg').show();
+                $('#errorMsg').html("请输入账号");
+                return;
+            }
+            if(oc.isEmpty(password)){
+                $('#errorMsg').show();
+                $('#errorMsg').html("请输入密码");
+                return;
+            }
 			//验证用户名 
 			if(!oc.enNumValid(username)){
 				$('#errorMsg').show();
@@ -60,9 +76,7 @@
 				$('#errorMsg').html("密码至少6位");
 				return;
 			}
-			
-			//验证码不能为空
-			var code = $('#identiryCode').val();
+
 			if(oc.isEmpty(code)){
 				$('#errorMsg').show();
 				$('#errorMsg').html("请输入验证码");
@@ -82,7 +96,7 @@
 						},3000)
 					} else if(resp.errcode == 1) {
 						$('#errorMsg').show();
-						$('#errorMsg').html("用户名已被注册，请更换！");
+						$('#errorMsg').html("用户名已被注册，请更改新的用户名！");
 					}else if(resp.errcode == 2){
 						$('#errorMsg').show();
 						$('#errorMsg').html("验证码输入错误！");

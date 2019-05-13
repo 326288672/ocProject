@@ -167,7 +167,8 @@ public class CourseController {
 		String key = null;
 		try {
 			if (null != pictureImg && pictureImg.getBytes().length > 0) {
-				key = QiniuStorage.uploadImage(pictureImg.getBytes());//七牛上传图片
+				//七牛上传图片
+				key = QiniuStorage.uploadImage(pictureImg.getBytes());
 				entity.setPicture(key);
 			}
 		} catch (IOException e) {

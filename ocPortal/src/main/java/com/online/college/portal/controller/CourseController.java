@@ -106,12 +106,14 @@ public class CourseController {
 	 */
 	@RequestMapping("/video/{sectionId}")
 	public ModelAndView video(@PathVariable Long sectionId){
-		if(null == sectionId)
-			return new ModelAndView("error/404"); 
+		if(null == sectionId) {
+			return new ModelAndView("error/404");
+		}
 		
 		CourseSection courseSection = courseSectionService.getById(sectionId);
-		if(null == courseSection)
-			return new ModelAndView("error/404"); 
+		if(null == courseSection) {
+			return new ModelAndView("error/404");
+		}
 		
 		//课程章节
 		ModelAndView mv = new ModelAndView("video");
